@@ -4,10 +4,10 @@ export default function LoginPage() {
   return (
     <main className="min-h-screen bg-[#f5f7f8] flex flex-col">
       <div className="flex flex-1 items-start justify-center px-4 pt-0 sm:items-center sm:pt-8 mt-24 sm:mt-0">
-        <div className="w-full max-w-[284px] sm:max-w-md">
+        <div className="w-full max-w-71 sm:max-w-md">
           {/* Logo */}
           <div className="flex justify-center">
-            <div className="flex h-[82px] w-[82px] items-center justify-center overflow-hidden rounded-sm bg-[#004d40]">
+            <div className="flex h-20.5 w-20.5 items-center justify-center overflow-hidden rounded-sm bg-[#004d40]">
               <img
                 src="/logo.png"
                 alt="Kiran Reddy Hostel"
