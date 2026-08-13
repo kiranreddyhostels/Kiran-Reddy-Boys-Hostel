@@ -1,9 +1,9 @@
-// import LoginForm from "@/app/components/login/LoginForm";
+import LoginForm from "@/components/login/LoginForm";
 
 export default function LoginPage() {
   return (
     <main className="min-h-screen bg-[#f5f7f8] flex flex-col">
-      <div className="flex flex-1 items-start justify-center px-4 pt-0 sm:items-center sm:pt-8">
+      <div className="flex flex-1 items-start justify-center px-4 pt-0 sm:items-center sm:pt-8 mt-24 sm:mt-0">
         <div className="w-full max-w-[284px] sm:max-w-md">
           {/* Logo */}
           <div className="flex justify-center">
@@ -21,7 +21,7 @@ export default function LoginPage() {
             Sign in to manage your hostel.
           </p>
 
-          {/* <LoginForm /> */}
+          <LoginForm />
 
           {/* Contact Admin */}
           <p className="mt-6 text-center text-[13px] text-gray-700">
