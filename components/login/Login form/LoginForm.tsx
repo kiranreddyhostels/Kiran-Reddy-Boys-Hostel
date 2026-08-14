@@ -1,9 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { FormEvent, useState } from "react";
-import EmailInput from "./EmailInput";
-import PasswordInput from "./PasswordInput";
-import LoginButton from "./LoginButton";
+import EmailInput from "../input/EmailInput";
+import PasswordInput from "../Password/PasswordInput";
+import LoginButton from "../LoginButton/LoginButton";
 
 export default function LoginForm() {
   const [username, setUsername] = useState("");
@@ -97,12 +98,12 @@ export default function LoginForm() {
 
           {/* Forgot Password */}
           <div className="mt-4 text-right">
-            <a
+            <Link
               href="/forgot-password"
               className="font-mono text-[10px] tracking-wider text-gray-700 hover:text-[#00634f] hover:underline focus:outline-none focus:ring-2 focus:ring-[#00634f]"
             >
               Forgot Password?
-            </a>
+            </Link>
           </div>
         </div>
 

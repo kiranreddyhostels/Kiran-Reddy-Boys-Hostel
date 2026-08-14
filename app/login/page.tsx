@@ -1,4 +1,5 @@
-import LoginForm from "@/components/login/LoginForm";
+import LoginForm from "@/components/login/Login form/LoginForm";
+import Link from "next/link";
 
 export default function LoginPage() {
   return (
@@ -9,7 +10,7 @@ export default function LoginPage() {
           <div className="flex justify-center">
             <div className="flex h-20.5 w-20.5 items-center justify-center overflow-hidden rounded-sm bg-[#004d40]">
               <img
-                src="/logo.png"
+                src="/logo.webp"
                 alt="Kiran Reddy Hostel"
                 className="h-full w-full object-contain"
               />
@@ -26,12 +27,12 @@ export default function LoginPage() {
           {/* Contact Admin */}
           <p className="mt-6 text-center text-[13px] text-gray-700">
             Don't have an account?{" "}
-            <a
+            <Link
               href="/contact-admin"
               className="text-[#d84315] hover:underline"
             >
               Contact Admin
-            </a>
+            </Link>
           </p>
         </div>
       </div>
@@ -39,13 +40,14 @@ export default function LoginPage() {
       {/* Footer */}
       <footer className="border-t border-gray-200 py-5">
         <div className="flex justify-center gap-7 text-[11px] font-mono tracking-wider text-gray-500">
-          <a href="/privacy-policy" className="hover:text-gray-800">
-            Privacy Policy
-          </a>
+          <Link href="/privacy-policy" className="hover:text-gray-800">
+          Privacy Policy
+          </Link>
+          
 
-          <a href="/support" className="hover:text-gray-800">
+          <Link href="/support" className="hover:text-gray-800">
             Support
-          </a>
+          </Link>
         </div>
       </footer>
     </main>
