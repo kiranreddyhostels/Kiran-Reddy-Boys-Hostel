@@ -2,7 +2,7 @@ export default function DashboardHeader() {
   return (
     <header className="flex h-16 w-full items-center justify-between border-b border-[#C7C4D8] bg-[#F8F9FA] px-4">
       {/* Logo */}
-      <div className="flex h-[50px] w-[50px] items-center gap-2">
+      <div className="flex h-[50px] w-[50px] items-center">
         <img
           src="/logo.png"
           alt="Kiran Reddy Boys Hostel Logo"
@@ -14,7 +14,7 @@ export default function DashboardHeader() {
       <div className="flex items-center gap-2">
         <button
           type="button"
-          className="flex h-10 w-[42px] flex-col items-center justify-center rounded-xl px-2"
+          className="flex h-10 w-[42px] items-center justify-center rounded-xl"
           aria-label="Logout"
         >
           <img
@@ -26,7 +26,7 @@ export default function DashboardHeader() {
 
         <button
           type="button"
-          className="flex h-10 w-[42px] flex-col items-center justify-center rounded-xl px-2"
+          className="flex h-10 w-[42px] items-center justify-center rounded-xl"
           aria-label="Menu"
         >
           <img

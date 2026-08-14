@@ -30,7 +30,7 @@ const navigationItems = [
 
 export default function BottomNavigation() {
   return (
-    <nav className="fixed bottom-0 left-0 z-50 flex h-[52px] w-full items-center justify-around bg-white shadow-[0_2px_4px_-2px_rgba(0,0,0,0.1),0_4px_6px_-1px_rgba(0,0,0,0.1)]">
+    <nav className="fixed bottom-0 left-0 z-50 flex h-[52px] w-full items-center justify-around bg-white">
       {navigationItems.map((item) => (
         <Link
           key={item.name}
