@@ -1,26 +1,16 @@
 "use client";
 
-import Button from "@/components/Button/Button";
-import { useCounter } from "@/hooks/useCounter";
+import DashboardHeader from "@/components/DashboardHeader/DashboardHeader";
+import BottomNavigation from "@/components/BottomNavigation/BottomNavigation";
 
 export default function Home() {
-  const { count, increment, decrement, reset } = useCounter();
-
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-6">
-      <h1 className="text-4xl font-bold">
-        Kiran Reddy Boys Hostel
-      </h1>
+    <main className="min-h-screen bg-[#F8F9FA]">
+      <DashboardHeader />
 
-      <p className="text-2xl">
-        Count: {count}
-      </p>
+      {/* Other dashboard ticket components will be added here */}
 
-      <div className="flex gap-3">
-        <Button label="-" onClick={decrement} />
-        <Button label="Reset" onClick={reset} />
-        <Button label="+" onClick={increment} />
-      </div>
+      <BottomNavigation />
     </main>
   );
 }
