@@ -1,4 +1,4 @@
-import LoginForm from "@/components/login/Login form/LoginForm";
+import LoginForm from "@/app/login/LoginForm/LoginForm";
 import Link from "next/link";
 
 export default function LoginPage() {
@@ -28,7 +28,7 @@ export default function LoginPage() {
           <p className="mt-6 text-center text-[13px] text-gray-700">
             Don't have an account?{" "}
             <Link
-              href="/contact-admin"
+              href="/ContactAdmin"
               className="text-[#d84315] hover:underline"
             >
               Contact Admin

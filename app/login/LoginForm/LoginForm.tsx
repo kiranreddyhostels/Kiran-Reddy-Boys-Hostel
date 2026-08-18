@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { FormEvent, useState } from "react";
-import EmailInput from "../input/EmailInput";
+import EmailInput from "../Input/EmailInput";
 import PasswordInput from "../Password/PasswordInput";
-import LoginButton from "../LoginButton/LoginButton";
+import Button from "@/components/Button/Button";
 
 export default function LoginForm() {
   const [username, setUsername] = useState("");
@@ -99,7 +99,7 @@ export default function LoginForm() {
           {/* Forgot Password */}
           <div className="mt-4 text-right">
             <Link
-              href="/forgot-password"
+              href="/ForgotPassword"
               className="font-mono text-[10px] tracking-wider text-gray-700 hover:text-[#00634f] hover:underline focus:outline-none focus:ring-2 focus:ring-[#00634f]"
             >
               Forgot Password?
@@ -107,7 +107,12 @@ export default function LoginForm() {
           </div>
         </div>
 
-        <LoginButton loading={loading} />
+        <Button
+          type="submit"
+          text="Login"
+          loading={loading}
+          loadingText="Logging in..."
+        />
       </form>
     </div>
   );
