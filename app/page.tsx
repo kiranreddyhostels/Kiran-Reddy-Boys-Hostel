@@ -16,11 +16,11 @@ export default function Home() {
         Count: {count}
       </p>
 
-      <div className="flex gap-3">
+      {/* <div className="flex gap-3">
         <Button label="-" onClick={decrement} />
         <Button label="Reset" onClick={reset} />
         <Button label="+" onClick={increment} />
-      </div>
+      </div> */}
     </main>
   );
 }
