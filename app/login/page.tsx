@@ -29,7 +29,7 @@ export default function LoginPage() {
             Don't have an account?{" "}
             <Link
               href="/ContactAdmin"
-              className="text-[#d84315] hover:underline"
+              className="text-[#AC3400] hover:underline"
             >
               Contact Admin
             </Link>
