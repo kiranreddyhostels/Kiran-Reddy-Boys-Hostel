@@ -6,6 +6,7 @@ import RoomNumber from "./RoomNumber/RoomNumber";
 import Floor from "./Floor/Floor";
 import NumberOfBeds from "./NumberOfBeds/NumberOfBeds";
 import BedRent from "./BedRent/BedRent";
+import Notes from "./Notes/Notes";
 
 export default function AddRoomPage() {
   const router = useRouter();
@@ -13,13 +14,15 @@ export default function AddRoomPage() {
   const [floor, setFloor] = useState("Ground Floor");
   const [numberOfBeds, setNumberOfBeds] = useState(4);
   const [bedRent,setBedRent]= useState("");
+  const [notes,setNotes]= useState("");
 
   const handleSaveRoom = () => {
     const roomData = {
       roomNumber,
       floor,
       numberOfBeds,
-      bedRent
+      bedRent,
+      notes,
     };
     console.log("Room Data: ", roomData);
   };
@@ -110,6 +113,12 @@ export default function AddRoomPage() {
           {/* bed rent */}
           <BedRent value={bedRent} onChange={setBedRent}/>
         </section>
+
+        {/* notes */}
+         <Notes
+              value={notes}
+              onChange={setNotes}
+            />
       </div>
     </main>
   );
