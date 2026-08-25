@@ -33,7 +33,7 @@ export default function Floor({
         </select>
 
         <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#6b7280]">
-         ⌃
+         <img src="/assets/dropdown.svg" alt="Drop down" className="h-4 w-4" />
         </span>
       </div>
     </div>

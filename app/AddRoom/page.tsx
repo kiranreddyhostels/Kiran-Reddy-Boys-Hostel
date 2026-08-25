@@ -4,16 +4,19 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import RoomNumber from "./RoomNumber/RoomNumber";
 import Floor from "./Floor/Floor";
+import NumberOfBeds from "./NumberOfBeds/NumberOfBeds";
 
 export default function AddRoomPage() {
      const router = useRouter();
   const [roomNumber, setRoomNumber] = useState("");
   const [floor, setFloor] = useState("Ground Floor");
+  const [numberOfBeds,setNumberOfBeds] = useState(4);
 
   const handleSaveRoom = () => {
     const roomData = {
       roomNumber,
       floor,
+      numberOfBeds,
     };
     console.log("Room Data: ", roomData);
   };
@@ -33,18 +36,18 @@ export default function AddRoomPage() {
               className="flex items-center gap-2 text-sm font-semibold text-[#00634f]"
             >
               <span className="text-md">
-                <img src="\leftArrow.svg" alt="arrow"  />
+                <img src="/assets/leftArrow.svg" alt="arrow" className="h-3 w-4"  />
               </span>
               <span>Add Room</span>
             </Link>
 
             <Link href="/" onClick={() => router.back()}
             aria-label="Close">
-             <img src="\close.svg" alt="close"  />
+             <img src="/assets/close.svg" alt="close"  />
             </Link>
           </header>
 
-         
+        
 
            {/* RoomImage */}
            
@@ -59,7 +62,7 @@ export default function AddRoomPage() {
 
               <div className="absolute bottom-3 left-3 rounded-full bg-white px-3 py-1.5 text-xs font-medium text-[#374151] shadow-md">
                  <span className="flex items-center gap-2">
-            <img src="/bed.svg" alt="Bed" className="h-5 w-5" />
+            <img src="/assets/bed.svg" alt="Bed" className="h-5 w-5" />
            <span>Room 102 Configuration</span>
              </span>
               </div>
@@ -68,7 +71,7 @@ export default function AddRoomPage() {
 
           <section>
             <div className="flex items-center gap-2 border-b border-[#e5e7eb] px-3 py-3 sm:px-5 md:px-6">
-              <span className="text-sm text-[#00634f]"> <img src="\info.svg" alt="info"  /></span>
+              <span className="text-sm"> <img src="/assets/info.svg" alt="info" className="h-4 w-4" /></span>
 
               <h2 className="text-xs font-bold text-[#202124] sm:text-sm">
                 Basic Information
@@ -86,6 +89,23 @@ export default function AddRoomPage() {
             />
           
             </section>
+
+
+{/* configuration */}
+<section>
+  <div className="flex items-center gap-2 border-b border-[#e5e7eb] px-3 py-3 sm:px-5 md:px-6">
+    <span className="text-sm"><img src="/assets/setting.svg" alt="setting" className="h-5 w-5" /></span>
+
+    <h2 className="text-xs font-bold text-[#202124] sm:text-sm">Configuration</h2>
+  </div>
+
+  {/* number of beds */}
+<NumberOfBeds 
+value={numberOfBeds} 
+onChange={setNumberOfBeds}/>
+
+</section>
+
 
       </div>
     </main>
