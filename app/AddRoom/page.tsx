@@ -8,6 +8,7 @@ import NumberOfBeds from "./NumberOfBeds/NumberOfBeds";
 import BedRent from "./BedRent/BedRent";
 import Notes from "./Notes/Notes";
 import Button from "@/components/Button/Button";
+import { useNavigation } from "@/hooks/useNavigation";
 
 export default function AddRoomPage() {
   const router = useRouter();
@@ -16,6 +17,7 @@ export default function AddRoomPage() {
   const [numberOfBeds, setNumberOfBeds] = useState(4);
   const [bedRent,setBedRent]= useState("");
   const [notes,setNotes]= useState("");
+  const { handleCancel, goToAddRoomSuccess } = useNavigation();
 
   const handleSaveRoom = () => {
     const roomData = {
@@ -26,11 +28,9 @@ export default function AddRoomPage() {
       notes,
     };
     console.log("Room Data: ", roomData);
-    router.push("/AddRoom/Success");``
+    goToAddRoomSuccess();
   };
-  const handleCancel = () => {
-    router.back();
-  };
+  
   
   return (
     <main className="min-h-screen bg-[#f5f7f8]">
