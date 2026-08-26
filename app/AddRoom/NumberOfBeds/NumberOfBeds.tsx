@@ -17,12 +17,12 @@ export default function NumberOfBeds({ value, onChange }: NumberOfBedsProps) {
     }
   };
   return (
-    <div className="border-b border-[#e5e7eb] px-3 py-3">
+    <div className="border-b border-[#e5e7eb] px-3 py-3 " >
       <label className="mb-2 block text-xs font-semibold text-[#202124]">
         Number of Beds
       </label>
 
-      <div className="flex h-10 items-center justify-between rounded-md border-[#d9dce5] bg white px-3">
+      <div className="flex h-10 items-center justify-between rounded-md border-[#d9dce5] bg-white px-3">
         <button
           type="button"
           onClick={decreaseBeds}

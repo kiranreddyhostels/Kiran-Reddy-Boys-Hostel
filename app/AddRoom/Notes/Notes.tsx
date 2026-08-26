@@ -16,17 +16,7 @@ export default function Notes({
         className="mb-2 block text-xs font-semibold text-[#202124]"
       >
       </label>
-      <div className="flex items-center gap-2 border-b border-[#e5e7eb] px-3 py-3 sm:px-5 md:px-6">
-              <span className="text-sm "><img
-                src="/assets/file-icon.svg"
-                alt="file"
-                className="h-5 w-5 " 
-              /></span>
 
-              <h2 className="text-xs font-bold text-[#202124] sm:text-sm">
-                Notes
-              </h2>
-              </div>
       <textarea
         id="notes"
         value={value}

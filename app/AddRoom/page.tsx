@@ -7,6 +7,7 @@ import Floor from "./Floor/Floor";
 import NumberOfBeds from "./NumberOfBeds/NumberOfBeds";
 import BedRent from "./BedRent/BedRent";
 import Notes from "./Notes/Notes";
+import Button from "@/components/Button/Button";
 
 export default function AddRoomPage() {
   const router = useRouter();
@@ -25,10 +26,12 @@ export default function AddRoomPage() {
       notes,
     };
     console.log("Room Data: ", roomData);
+    router.push("/AddRoom/Success");``
   };
   const handleCancel = () => {
     router.back();
   };
+  
   return (
     <main className="min-h-screen bg-[#f5f7f8]">
       <div className="mx-auto flex min-h-screen w-full flex-col bg-[#f8fafb] sm:max-w-xl md:max-w-2xl lg:max-w-3xl">
@@ -54,6 +57,9 @@ export default function AddRoomPage() {
             <img src="/assets/close.svg" alt="close" />
           </Link>
         </header>
+
+          {/* Content */}
+        <div className="flex-1 overflow-y-auto">
 
         {/* RoomImage */}
 
@@ -115,10 +121,42 @@ export default function AddRoomPage() {
         </section>
 
         {/* notes */}
-         <Notes
+         <section>
+            <div className="flex items-center gap-2 border-b border-[#e5e7eb] px-3 py-3 sm:px-5 md:px-6">
+              <span className="text-sm text-[#00634f]"><img
+                src="/assets/file-icon.svg"
+                alt="File"
+                className="h-5 w-5"
+              /></span>
+
+              <h2 className="text-xs font-bold text-[#202124] sm:text-sm">
+                Notes
+              </h2>
+            </div>
+
+            <Notes
               value={notes}
               onChange={setNotes}
             />
+          </section>
+          </div>
+
+           <div className="flex w-full gap-2 mb-3 px-3 py-3 sm:px-5 md:px-6">
+      <Button
+        text="Cancel"
+        type="button"
+        onClick={handleCancel}
+        className="h-10 rounded-lg border border-[#00634f]  text-[#00634f]! bg-white! text-sm font-semibold shadow-none hover:bg-[#f0f8f6]"
+      />
+
+      <Button
+        text="Save Room"
+        type="submit"
+        onClick={handleSaveRoom}
+        className="h-10 rounded-lg text-sm font-semibold shadow-none"
+        
+      />
+    </div>
       </div>
     </main>
   );
