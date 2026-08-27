@@ -1,4 +1,8 @@
 "use client";
+
+import Icon from "@/components/Icons/Icons";
+
+
 interface BedRentProps {
   value: string;
   onChange: (value: string) => void;
@@ -15,7 +19,7 @@ export default function BedRent({ value, onChange }: BedRentProps) {
 
       <div className="flex h-10 items-center rounded-md border border-[#d9dce5] bg-white focus-within:border-[#00634f] focus-within:ring-1 focus-within:ring-[#00634f]">
         <span className="pl-3 text-xs text-[#6b7280]">
-          <img src="/assets/rupee-icon.svg" alt="close" />
+          <Icon src="/assets/rupee-icon.svg" alt="close" />
         </span>
 
         <input

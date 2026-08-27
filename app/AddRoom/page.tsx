@@ -9,6 +9,7 @@ import BedRent from "./BedRent/BedRent";
 import Notes from "./Notes/Notes";
 import Button from "@/components/Button/Button";
 import { useNavigation } from "@/hooks/useNavigation";
+import Icon from "@/components/Icons/Icons";
 
 export default function AddRoomPage() {
   const router = useRouter();
@@ -44,7 +45,7 @@ export default function AddRoomPage() {
             className="flex items-center gap-2 text-sm font-semibold text-[#00634f]"
           >
             <span className="text-md">
-              <img
+              <Icon
                 src="/assets/leftArrow.svg"
                 alt="arrow"
                 className="h-3 w-4"
@@ -54,7 +55,7 @@ export default function AddRoomPage() {
           </Link>
 
           <Link href="/" onClick={() => router.back()} aria-label="Close">
-            <img src="/assets/close.svg" alt="close" />
+            <Icon src="/assets/close.svg" alt="close" />
           </Link>
         </header>
 
@@ -73,7 +74,7 @@ export default function AddRoomPage() {
 
             <div className="absolute bottom-3 left-3 rounded-full bg-white px-3 py-1.5 text-xs font-medium text-[#374151] shadow-md">
               <span className="flex items-center gap-2">
-                <img src="/assets/bed.svg" alt="Bed" className="h-5 w-5" />
+                <Icon src="/assets/bed.svg" alt="Bed" className="h-5 w-5" />
                 <span>Room 102 Configuration</span>
               </span>
             </div>
@@ -84,7 +85,7 @@ export default function AddRoomPage() {
           <div className="flex items-center gap-2 border-b border-[#e5e7eb] px-3 py-3 sm:px-5 md:px-6">
             <span className="text-sm">
               {" "}
-              <img src="/assets/info.svg" alt="info" className="h-4 w-4" />
+              <Icon src="/assets/info.svg" alt="info" className="h-4 w-4" />
             </span>
 
             <h2 className="text-xs font-bold text-[#202124] sm:text-sm">
@@ -101,7 +102,7 @@ export default function AddRoomPage() {
         <section>
           <div className="flex items-center gap-2 border-b border-[#e5e7eb] px-3 py-3 sm:px-5 md:px-6">
             <span className="text-sm">
-              <img
+              <Icon
                 src="/assets/setting.svg"
                 alt="setting"
                 className="h-5 w-5"
@@ -123,7 +124,7 @@ export default function AddRoomPage() {
         {/* notes */}
          <section>
             <div className="flex items-center gap-2 border-b border-[#e5e7eb] px-3 py-3 sm:px-5 md:px-6">
-              <span className="text-sm text-[#00634f]"><img
+              <span className="text-sm text-[#00634f]"><Icon
                 src="/assets/file-icon.svg"
                 alt="File"
                 className="h-5 w-5"
