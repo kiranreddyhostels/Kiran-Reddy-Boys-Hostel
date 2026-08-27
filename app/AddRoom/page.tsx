@@ -146,15 +146,13 @@ export default function AddRoomPage() {
         text="Cancel"
         type="button"
         onClick={handleCancel}
-        className="h-10 rounded-lg border border-[#00634f]  text-[#00634f]! bg-white! text-sm font-semibold shadow-none hover:bg-[#f0f8f6]"
+       variant="outline"
       />
 
       <Button
         text="Save Room"
         type="submit"
         onClick={handleSaveRoom}
-        className="h-10 rounded-lg text-sm font-semibold shadow-none"
-        
       />
     </div>
       </div>
