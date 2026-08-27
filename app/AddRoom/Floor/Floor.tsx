@@ -1,9 +1,18 @@
 "use client";
 
+import Icon from "@/components/Icons/Icons";
+
 interface FloorProps {
   value: string;
   onChange: (value: string) => void;
 }
+const floors=[
+  {name:"Ground Floor", id:"ground floor"},
+  {name:"1st Floor", id:"1st floor"},
+  {name:"2nd Floor", id:"2nd floor"},
+  {name:"3rd Floor", id:"3rd floor"},
+  {name:"4th Floor", id:"4th floor"}
+]
 
 export default function Floor({
   value,
@@ -25,15 +34,13 @@ export default function Floor({
           onChange={(event) => onChange(event.target.value)}
           className="h-10 w-full appearance-none rounded-md border border-[#d9dce5] bg-white px-3 text-xs text-[#202124] outline-none focus:border-[#00634f] focus:ring-1 focus:ring-[#00634f]"
         >
-          <option value="Ground Floor">Ground Floor</option>
-          <option value="1st Floor">1st Floor</option>
-          <option value="2nd Floor">2nd Floor</option>
-          <option value="3rd Floor">3rd Floor</option>
-          <option value="4th Floor">4th Floor</option>
+          {floors.map((floor)=>(
+            <option key={floor.id} value={floor.name}>{floor.name}</option>
+          ))}
         </select>
 
         <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#6b7280]">
-         <img src="/assets/dropdown.svg" alt="Drop down" className="h-4 w-4" />
+         <Icon src="/assets/dropdown.svg" alt="Drop down" className="h-4 w-4" />
         </span>
       </div>
     </div>
