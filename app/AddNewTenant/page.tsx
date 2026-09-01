@@ -1,0 +1,54 @@
+"use client";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import Icon from "@/components/Icons/Icons";
+
+export default function AddNewTenantPage() {
+  const router = useRouter();
+  return (
+    <main className="min-h-screen bg-[#f4f6f7]">
+      <div className="mx-auto flex min-h-screen w-full flex-col sm:max-w-xl md:max-w-2xl lg:max-w-3xl ">
+        {/* header */}
+        <header className="flex h-12 items-center justify-between border-b border-[#e5e7eb] bg-white px-3 sm:h-14 sm:px-5 md:px-6">
+          <Link
+            href="/"
+            onClick={() => router.back}
+            aria-label="Go back"
+            className="flex items-center gap-2 text-xs font-semibold text-[#00634f] sm:text-sm"
+          >
+            <span className="text-md">
+              <Icon
+                src="/assets/leftArrow.svg"
+                alt="arrow"
+                className="h-3 w-4"
+              />
+            </span>
+            <span>Add New Tenant</span>
+          </Link>
+
+          <Link
+            href="/"
+            onClick={() => router.back()}
+            aria-label="close"
+            className="text-lg text-[#6b7280]"
+          >
+            {" "}
+            <Icon src="/assets/close.svg" alt="close" />
+          </Link>
+        </header>
+
+        <div className="flex items-center justify-between px-4 py-3 sm:px-6">
+          <div className="flex items-center gap-1">
+            <div className="h-1 w-7 rounded-full bg-[#00634f] sm:w-10"></div>
+            <div className="h-1 w-6 rounded-full bg-[#cbd5d3] sm:w-9"></div>
+          </div>
+          <span className="text-[9px] text-[#6b7280] sm:text-xs">
+            Step 1 of 2
+          </span>
+        </div>
+
+
+      </div>
+    </main>
+  );
+}
