@@ -2,9 +2,21 @@
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Icon from "@/components/Icons/Icons";
+import PrivacyPolicyPage from "../privacy-policy/page";
+import PropertyDetails from "./PropertyDetails/PropertyDetails";
+import { useState } from "react";
+import PersonalInformation from "./PersonalInformation/PersonalInformation";
 
 export default function AddNewTenantPage() {
+  const [room,setRoom]=useState("");
+  const [bed,setBed]=useState("");
+  const [fullName,setFullName]=useState("");
+  const [mobileNumber,setMobileNumber]=useState("");
+  const [idNumber,setIdNumber]=useState("");
+  const [emergencyContact,setEmergencyContact]=useState("");
   const router = useRouter();
+
+
   return (
     <main className="min-h-screen bg-[#f4f6f7]">
       <div className="mx-auto flex min-h-screen w-full flex-col sm:max-w-xl md:max-w-2xl lg:max-w-3xl ">
@@ -32,7 +44,6 @@ export default function AddNewTenantPage() {
             aria-label="close"
             className="text-lg text-[#6b7280]"
           >
-            {" "}
             <Icon src="/assets/close.svg" alt="close" />
           </Link>
         </header>
@@ -47,7 +58,11 @@ export default function AddNewTenantPage() {
           </span>
         </div>
 
-
+          {/* property Details */}
+        <PropertyDetails room={room} bed={bed} onRoomChange={setRoom} onBedChange={setBed}/>
+         
+         {/* Personal information */}
+          < PersonalInformation fullName={fullName} mobileNumber={mobileNumber} idNumber={idNumber} emergencyContact={emergencyContact} onFullNameChange={setFullName} onMobileNumberChange={setMobileNumber} onIdNumberChange={setIdNumber} onEmergencyContactChange={setEmergencyContact}/>
       </div>
     </main>
   );
