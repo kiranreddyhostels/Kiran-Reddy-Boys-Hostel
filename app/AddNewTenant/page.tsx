@@ -2,10 +2,10 @@
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Icon from "@/components/Icons/Icons";
-import PrivacyPolicyPage from "../privacy-policy/page";
 import PropertyDetails from "./PropertyDetails/PropertyDetails";
 import { useState } from "react";
 import PersonalInformation from "./PersonalInformation/PersonalInformation";
+import Documentation from "./Documentation/Documentation";
 
 export default function AddNewTenantPage() {
   const [room,setRoom]=useState("");
@@ -14,6 +14,8 @@ export default function AddNewTenantPage() {
   const [mobileNumber,setMobileNumber]=useState("");
   const [idNumber,setIdNumber]=useState("");
   const [emergencyContact,setEmergencyContact]=useState("");
+  const [profileImage,setProfileImage]=useState<File|null>(null);
+  const [idDocument,setIdDocument]=useState<File|null>(null);
   const router = useRouter();
 
 
@@ -63,6 +65,11 @@ export default function AddNewTenantPage() {
          
          {/* Personal information */}
           < PersonalInformation fullName={fullName} mobileNumber={mobileNumber} idNumber={idNumber} emergencyContact={emergencyContact} onFullNameChange={setFullName} onMobileNumberChange={setMobileNumber} onIdNumberChange={setIdNumber} onEmergencyContactChange={setEmergencyContact}/>
+
+          {/* documentation */}
+          <Documentation onProfileChange={setProfileImage} onDocumentChange={setIdDocument}/>
+
+
       </div>
     </main>
   );

@@ -69,9 +69,9 @@ export default function PersonalInformation({
               className="h-8 w-full rounded-md border border-[#d9dce5] px-2 text-[10px] outline-none placeholder:text-[#9ca3af] focus:border-[#00634f] text-black sm:h-10 sm:text-xs "/>
             </div>
             <div>
-                <label htmlFor="emergencyContact" className="mb-1 block text-[9px] font-bold text-[#3E4947] ">Emergency Contact</label>
+                <label htmlFor="emergencyContact" className="mb-1 block text-[9px] font-bold text-[#3E4947] sm:text-xs">Emergency Contact</label>
                 <input type="tel"  id="emergencyContact" value={emergencyContact} onChange={(event)=>onEmergencyContactChange(event.target.value)} placeholder="+1 (555) 999-9999"
-              className="h-8 w-full rounded-md border border-[#d9dce5] px-2 text-[10px] text-black outline-none placeholder:text-[#9ca3af] focus:border-[#00634f] "/>
+              className="h-8 w-full rounded-md border border-[#d9dce5] px-2 text-[10px] text-black outline-none placeholder:text-[#9ca3af] focus:border-[#00634f]  sm:h-10 sm:text-xs"/>
             </div>
         </div>
 
