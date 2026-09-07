@@ -6,6 +6,8 @@ import PropertyDetails from "./PropertyDetails/PropertyDetails";
 import { useState } from "react";
 import PersonalInformation from "./PersonalInformation/PersonalInformation";
 import Documentation from "./Documentation/Documentation";
+import LeaseAddress from "./LeaseAddress/LeaseAddress";
+
 
 export default function AddNewTenantPage() {
   const [room,setRoom]=useState("");
@@ -16,6 +18,9 @@ export default function AddNewTenantPage() {
   const [emergencyContact,setEmergencyContact]=useState("");
   const [profileImage,setProfileImage]=useState<File|null>(null);
   const [idDocument,setIdDocument]=useState<File|null>(null);
+  const [dateOfJoin,setDateOfJoin]=useState("");
+  const [status,setStatus]=useState("");
+  const [address,setAddress]=useState("");
   const router = useRouter();
 
 
@@ -69,7 +74,9 @@ export default function AddNewTenantPage() {
           {/* documentation */}
           <Documentation onProfileChange={setProfileImage} onDocumentChange={setIdDocument}/>
 
-
+          
+          {/* lease&address */}
+          <LeaseAddress dateOfJoin={dateOfJoin} onChangeDateOfJoin={setDateOfJoin} status={status} onStatusChange={setStatus} address={address} onAddressChange={setAddress} />
       </div>
     </main>
   );
