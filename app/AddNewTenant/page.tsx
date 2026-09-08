@@ -7,22 +7,47 @@ import { useState } from "react";
 import PersonalInformation from "./PersonalInformation/PersonalInformation";
 import Documentation from "./Documentation/Documentation";
 import LeaseAddress from "./LeaseAddress/LeaseAddress";
+import BikeSection from "./BikeSection/BikeSection";
+import Button from "@/components/Button/Button";
+import { useNavigation } from "@/hooks/useNavigation";
 
 
 export default function AddNewTenantPage() {
-  const [room,setRoom]=useState("");
-  const [bed,setBed]=useState("");
-  const [fullName,setFullName]=useState("");
-  const [mobileNumber,setMobileNumber]=useState("");
-  const [idNumber,setIdNumber]=useState("");
-  const [emergencyContact,setEmergencyContact]=useState("");
-  const [profileImage,setProfileImage]=useState<File|null>(null);
-  const [idDocument,setIdDocument]=useState<File|null>(null);
-  const [dateOfJoin,setDateOfJoin]=useState("");
-  const [status,setStatus]=useState("");
-  const [address,setAddress]=useState("");
+  const [room, setRoom] = useState("");
+  const [bed, setBed] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [mobileNumber, setMobileNumber] = useState("");
+  const [idNumber, setIdNumber] = useState("");
+  const [emergencyContact, setEmergencyContact] = useState("");
+  const [profileImage, setProfileImage] = useState<File | null>(null);
+  const [idDocument, setIdDocument] = useState<File | null>(null);
+  const [dateOfJoin, setDateOfJoin] = useState("");
+  const [status, setStatus] = useState("");
+  const [address, setAddress] = useState("");
+  const [bikePic, setBikePic] = useState<File | null>(null);
+  const [bikeRc, setBikeRc] = useState<File | null>(null);
+  const {  goToAddNewTenantSuccess } = useNavigation();
   const router = useRouter();
 
+  const handleSaveTenant = () => {
+    const tenantData = {
+      room,
+      bed,
+      fullName,
+      mobileNumber,
+      idNumber,
+      emergencyContact,
+      profileImage,
+      idDocument,
+      dateOfJoin,
+      status,
+      address,
+      bikePic,
+      bikeRc,
+    };
+    console.log("Room Data: ", tenantData);
+    goToAddNewTenantSuccess();
+  };
 
   return (
     <main className="min-h-screen bg-[#f4f6f7]">
@@ -65,18 +90,54 @@ export default function AddNewTenantPage() {
           </span>
         </div>
 
-          {/* property Details */}
-        <PropertyDetails room={room} bed={bed} onRoomChange={setRoom} onBedChange={setBed}/>
-         
-         {/* Personal information */}
-          < PersonalInformation fullName={fullName} mobileNumber={mobileNumber} idNumber={idNumber} emergencyContact={emergencyContact} onFullNameChange={setFullName} onMobileNumberChange={setMobileNumber} onIdNumberChange={setIdNumber} onEmergencyContactChange={setEmergencyContact}/>
+        {/* property Details */}
+        <PropertyDetails
+          room={room}
+          bed={bed}
+          onRoomChange={setRoom}
+          onBedChange={setBed}
+        />
 
-          {/* documentation */}
-          <Documentation onProfileChange={setProfileImage} onDocumentChange={setIdDocument}/>
+        {/* Personal information */}
+        <PersonalInformation
+          fullName={fullName}
+          mobileNumber={mobileNumber}
+          idNumber={idNumber}
+          emergencyContact={emergencyContact}
+          onFullNameChange={setFullName}
+          onMobileNumberChange={setMobileNumber}
+          onIdNumberChange={setIdNumber}
+          onEmergencyContactChange={setEmergencyContact}
+        />
 
-          
-          {/* lease&address */}
-          <LeaseAddress dateOfJoin={dateOfJoin} onChangeDateOfJoin={setDateOfJoin} status={status} onStatusChange={setStatus} address={address} onAddressChange={setAddress} />
+        {/* documentation */}
+        <Documentation
+          onProfileChange={setProfileImage}
+          onDocumentChange={setIdDocument}
+        />
+
+        {/* lease&address */}
+        <LeaseAddress
+          dateOfJoin={dateOfJoin}
+          onChangeDateOfJoin={setDateOfJoin}
+          status={status}
+          onStatusChange={setStatus}
+          address={address}
+          onAddressChange={setAddress}
+        />
+
+        {/* bike section */}
+        <BikeSection onBikePicChange={setBikePic} onBikeRcChange={setBikeRc} />
+
+        {/* button */}
+        <div className="border-t border-[#e5e7eb] p-5 sm:p-4">
+  <Button
+    text="Add Tenant"
+    type="button"
+    onClick={handleSaveTenant}
+    className="h-9 text-[14px] sm:h-12 sm:text-xs"
+  />
+</div>
       </div>
     </main>
   );
