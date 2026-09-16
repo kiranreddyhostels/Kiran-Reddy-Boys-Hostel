@@ -10,7 +10,7 @@ export default function RentType({
   onChange,
 }: RentTypeProps) {
   return (
-    <section className="mx-4">
+    <section className="mx-4 mb-3 mt-1">
     <div className="flex h-10 w-full rounded-md bg-[#e9ecef] p-0.5 sm:h-9">
       <button
         type="button"

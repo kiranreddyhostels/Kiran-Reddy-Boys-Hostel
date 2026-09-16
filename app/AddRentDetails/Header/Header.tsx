@@ -9,7 +9,7 @@ export default function Header() {
 
   
   return (
-    <header className="flex h-12 items-center justify-between border-b border-[#e5e7eb] bg-white px-3 sm:h-14 sm:px-5 md:px-6">
+    <header className="flex h-12 items-center justify-between mb-3 border-[#e5e7eb]  px-3 sm:h-14 sm:px-5 md:px-6">
       <button
         type="button"
         onClick={() => router.back()}
