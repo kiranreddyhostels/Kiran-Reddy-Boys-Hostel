@@ -60,12 +60,7 @@ export default function RoomBed({
             ))}
           </select>
 
-        {/* <input
-          value={bedNumber}
-          readOnly
-          placeholder="e.g. B-01"
-          className="h-9 w-full rounded-md border border-[#d9dce5] bg-white px-2 text-[9px] text-[#202124] outline-none placeholder:text-[#9ca3af] sm:h-10 sm:text-xs"
-        /> */}
+       
       </div>
     </div>
     </section>

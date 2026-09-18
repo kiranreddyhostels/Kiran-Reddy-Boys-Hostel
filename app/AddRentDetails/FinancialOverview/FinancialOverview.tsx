@@ -1,4 +1,5 @@
 "use client";
+import Icon from "@/components/Icons/Icons";
 
 interface FinancialOverviewProps {
   totalFee: string;
@@ -30,10 +31,10 @@ export default function FinancialOverview({
           </label>
 
           <div className="flex h-9 items-center rounded-md border border-[#d9dce5] bg-white sm:h-10 text-black">
-            <span className="pl-2 text-[9px] text-[#6b7280] ">₹</span>
+            <span className="pl-2 text-[9px] text-[#6b7280] "> <Icon src="/assets/rupee-icon.svg" alt="Drop down" className="h-2 w-2 text-[#005C55]" /></span>
 
             <input
-              type="number"
+               type="text"
               value={totalFee}
               onChange={(e) => onTotalFeeChange(e.target.value)}
               placeholder="0.00"
@@ -48,10 +49,10 @@ export default function FinancialOverview({
           </label>
 
           <div className="flex h-9 items-center rounded-md border border-[#d9dce5] bg-white sm:h-10 text-black">
-            <span className="pl-2 text-[9px] text-[#6b7280]">₹</span>
+            <span className="pl-2 text-[9px] text-[#6b7280]"><Icon src="/assets/rupee-icon.svg" alt="Drop down" className="h-2 w-2 text-[#005C55]" /></span>
 
             <input
-              type="number"
+               type="text"
               value={paidAmount}
               onChange={(e) => onPaidAmountChange(e.target.value)}
               placeholder="0.00"
@@ -66,12 +67,10 @@ export default function FinancialOverview({
           </label>
 
           <div className="flex h-9 items-center rounded-md bg-[#dfe3e2] sm:h-10 text-black">
-            <span className="pl-2 text-[9px] text-[#6b7280]">₹</span>
-
-            
+            <span className="pl-2 text-[9px] text-[#6b7280]"><Icon src="/assets/rupee-icon.svg" alt="Drop down" className="h-2 w-2 text-[#005C55]" /></span>
 
             <input
-              type="number"
+               type="text"
               value={dueAmount}
               onChange={(e) => onDueAmountChange(e.target.value)}
               placeholder="0.00"
