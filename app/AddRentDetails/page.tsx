@@ -6,6 +6,9 @@ import Header from "./Header/Header";
 import RentType from "./RentType/RentType";
 import TenantSelect from "./TenantSelect/TenantSelect";
 import TenantModal from "./TenantSelect/TenantModal";
+import RoomBed from "./RoomBed/RoomBed";
+import FinancialOverview from "./FinancialOverview/FinancialOverview";
+
 
 interface Tenant {
   id: number;
@@ -50,14 +53,17 @@ const tenants: Tenant[] = [
 export default function AddRentDetails() {
   const [rentType, setRentType] =
     useState<"monthly" | "daily">("daily");
-
-  // selected tenant
   const [selectedTenant, setSelectedTenant] =
     useState<Tenant | null>(null);
-
-  // controls bottom sheet
   const [showTenantModal, setShowTenantModal] =
     useState(false);
+    const [room, setRoom] = useState("");
+  const [bed, setBed] = useState("");
+
+  const [totalFee, setTotalFee] = useState("");
+  const [paidAmount, setPaidAmount] = useState("");
+  const [dueAmount,setDueAmount] = useState("");
+
 
   return (
     <main className="min-h-screen bg-[#f4f6f7]">
@@ -89,6 +95,24 @@ export default function AddRentDetails() {
             }}
           />
         )}
+
+        {/* room and bed  number*/}
+        <RoomBed
+            room={room}
+            bed={bed}
+            onRoomChange={setRoom}
+            onBedChange={setBed}
+          />
+
+          {/* Financial Overview */}
+          <FinancialOverview
+            totalFee={totalFee}
+            paidAmount={paidAmount}
+            dueAmount={dueAmount}
+            onTotalFeeChange={setTotalFee}
+            onPaidAmountChange={setPaidAmount}
+            onDueAmountChange={setDueAmount}
+          />
 
       </div>
     </main>
