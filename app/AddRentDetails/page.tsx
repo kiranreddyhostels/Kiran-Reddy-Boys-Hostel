@@ -9,6 +9,11 @@ import TenantModal from "./TenantSelect/TenantModal";
 import RoomBed from "./RoomBed/RoomBed";
 import FinancialOverview from "./FinancialOverview/FinancialOverview";
 import RentDates from "./RentDates/RentDates";
+import WhatsaapNotification from "./WhatsappNotification/WhatsappNotification";
+import { useNavigation } from "@/hooks/useNavigation";
+import { useRouter } from "next/navigation";
+import Button from "@/components/Button/Button";
+
 
 
 interface Tenant {
@@ -68,8 +73,28 @@ export default function AddRentDetails() {
   const [dateOfJoin,setDateOfJoin]=useState("");
   const [paidDate, setPaidDate]=useState("");
   const [dueDate,setDueDate]=useState("");
+   const [whatsappEnabled, setWhatsappEnabled] =
+    useState(true);
+    const { handleCancel, goToAddRentSuccess } = useNavigation();
 
 
+    const handleSaveRoom = () => {
+    const rentData = {
+      rentType,
+      selectedTenant,
+      room,
+      bed,
+      totalFee,
+      paidAmount,
+      paidDate,
+      dueAmount,
+      dateOfJoin,
+      dueDate,
+      whatsappEnabled
+    };
+    console.log("Room Data: ", rentData);
+    goToAddRentSuccess();
+  };
 
   return (
     <main className="min-h-screen bg-[#f4f6f7]">
@@ -124,6 +149,22 @@ export default function AddRentDetails() {
           <RentDates
           dateOfJoin={dateOfJoin} onDateOfJoinChange={setDateOfJoin} paidDate={paidDate} onPaidDateChange={setPaidDate} dueDate={dueDate} onDueDateChange={setDueDate}
           />
+
+
+          {/* whatsapp notification */}
+          <WhatsaapNotification  enabled={whatsappEnabled}
+            onChange={setWhatsappEnabled}/>
+
+
+            {/* submit Button */}
+        <div className=" bottom-0 border-t  p-2 sm:p-4">
+          <Button
+            text="Submit Rent Details"
+            type="button"
+            onClick={handleSaveRoom}
+            className="h-9 text-[9px] sm:h-11 sm:text-xs"
+          />
+        </div>
 
       </div>
     </main>

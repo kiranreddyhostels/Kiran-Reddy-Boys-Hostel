@@ -10,8 +10,12 @@ export function useNavigation(){
     const goToAddRoomSuccess=()=>{
         router.push("/AddRoom/Success")
     };
+    const goToAddRentSuccess=()=>{
+        router.push("/AddRentDetails/Success")
+    };
     return {
     handleCancel,
     goToAddRoomSuccess,
+    goToAddRentSuccess,
   };
 }
