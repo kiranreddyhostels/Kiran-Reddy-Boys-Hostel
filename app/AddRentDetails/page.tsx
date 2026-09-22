@@ -8,6 +8,7 @@ import TenantSelect from "./TenantSelect/TenantSelect";
 import TenantModal from "./TenantSelect/TenantModal";
 import RoomBed from "./RoomBed/RoomBed";
 import FinancialOverview from "./FinancialOverview/FinancialOverview";
+import RentDates from "./RentDates/RentDates";
 
 
 interface Tenant {
@@ -64,6 +65,11 @@ export default function AddRentDetails() {
   const [paidAmount, setPaidAmount] = useState("");
   const [dueAmount,setDueAmount] = useState("");
 
+  const [dateOfJoin,setDateOfJoin]=useState("");
+  const [paidDate, setPaidDate]=useState("");
+  const [dueDate,setDueDate]=useState("");
+
+
 
   return (
     <main className="min-h-screen bg-[#f4f6f7]">
@@ -112,6 +118,11 @@ export default function AddRentDetails() {
             onTotalFeeChange={setTotalFee}
             onPaidAmountChange={setPaidAmount}
             onDueAmountChange={setDueAmount}
+          />
+
+          {/* rentdates */}
+          <RentDates
+          dateOfJoin={dateOfJoin} onDateOfJoinChange={setDateOfJoin} paidDate={paidDate} onPaidDateChange={setPaidDate} dueDate={dueDate} onDueDateChange={setDueDate}
           />
 
       </div>
