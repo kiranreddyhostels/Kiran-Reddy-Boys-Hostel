@@ -1,9 +1,15 @@
 "use client";
 import Header from "./Header/Header";
 import Amount from "./Amount/Amount";
+import ExpenseTitle from "./ExpenseTitle/ExpenseTitle";
+import ExpenseDate from "./ExpenseDate/ExpenseDate";
 import { useState } from "react";
+
 export default function AddExpense(){
   const [amount,setAmount]=useState("");
+  const[title,setTitle]=useState("");
+  const[date,setDate]=useState("");
+
   
     return(
 
@@ -12,7 +18,15 @@ export default function AddExpense(){
              <Header/>
              <div className="flex-1 overflow-y-auto px-2 pb-20 pt-2 sm:px-5 sm:pb-24 sm:pt-4 md:px-6 rounded-md border border-[#B3D0CF] mt-5">
               <div className="space-y-2.5 sm:space-y-4">
+                {/* amount */}
                 <Amount value={amount} onChange={setAmount}/>
+
+                {/* expense title */}
+                 <ExpenseTitle  value={title} onChange={setTitle}/>
+
+
+                 {/* expense date */}
+                 <ExpenseDate value={date} onChange={setDate}  />
               </div>
              </div>
 
