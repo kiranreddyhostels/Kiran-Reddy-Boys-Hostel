@@ -4,11 +4,15 @@ import Amount from "./Amount/Amount";
 import ExpenseTitle from "./ExpenseTitle/ExpenseTitle";
 import ExpenseDate from "./ExpenseDate/ExpenseDate";
 import { useState } from "react";
+import Category from "./Category/Category";
+import PaymentMethod from "./PaymentMethod/PaymentMethod";
 
 export default function AddExpense(){
   const [amount,setAmount]=useState("");
   const[title,setTitle]=useState("");
   const[date,setDate]=useState("");
+  const [category, setCategory] = useState("maintenance");
+  const [paymentMethod, setPaymentMethod] = useState("Cash");
 
   
     return(
@@ -27,6 +31,20 @@ export default function AddExpense(){
 
                  {/* expense date */}
                  <ExpenseDate value={date} onChange={setDate}  />
+
+                  {/* category */}
+                 <Category
+              value={category}
+              onChange={setCategory}
+            />
+
+
+            {/* payment method */}
+               <PaymentMethod
+              value={paymentMethod}
+              onChange={setPaymentMethod}
+            />
+
               </div>
              </div>
 
