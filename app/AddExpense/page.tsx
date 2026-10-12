@@ -6,6 +6,8 @@ import ExpenseDate from "./ExpenseDate/ExpenseDate";
 import { useState } from "react";
 import Category from "./Category/Category";
 import PaymentMethod from "./PaymentMethod/PaymentMethod";
+import ReceiptUpload from "./ReceiptUpload/ReceiptUpload";
+import Notes from "./Notes/Notes";
 
 export default function AddExpense(){
   const [amount,setAmount]=useState("");
@@ -13,6 +15,8 @@ export default function AddExpense(){
   const[date,setDate]=useState("");
   const [category, setCategory] = useState("maintenance");
   const [paymentMethod, setPaymentMethod] = useState("Cash");
+  const [receipt, setReceipt] = useState<File | null>(null);
+    const [notes, setNotes] = useState("");
 
   
     return(
@@ -45,6 +49,17 @@ export default function AddExpense(){
               onChange={setPaymentMethod}
             />
 
+
+            {/* receipt upload*/}
+            <ReceiptUpload  file={receipt}
+              onChange={setReceipt}/>
+
+              {/* notes */}
+
+               <Notes
+              value={notes}
+              onChange={setNotes}
+            />
               </div>
              </div>
 

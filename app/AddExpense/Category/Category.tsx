@@ -20,7 +20,7 @@ const categories = [
   {
     id: "salaries",
     name: "Salaries",
-    icon: (<Icon src="/assets/salaries.svg" alt="salaries"/>),
+    icon: (<Icon src="/assets/salary.svg" alt="salaries"/>),
   },
   {
     id: "food",
