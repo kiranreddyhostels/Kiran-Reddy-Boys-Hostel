@@ -1,13 +1,18 @@
 "use client";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 import Header from "./Header/Header";
 import Amount from "./Amount/Amount";
 import ExpenseTitle from "./ExpenseTitle/ExpenseTitle";
 import ExpenseDate from "./ExpenseDate/ExpenseDate";
-import { useState } from "react";
 import Category from "./Category/Category";
 import PaymentMethod from "./PaymentMethod/PaymentMethod";
 import ReceiptUpload from "./ReceiptUpload/ReceiptUpload";
 import Notes from "./Notes/Notes";
+import { useNavigation } from "@/hooks/useNavigation";
+import Button from "@/components/Button/Button";
+import ExpenseInfo from "./ExpenseInfo/ExpenseInfo";
 
 export default function AddExpense(){
   const [amount,setAmount]=useState("");
@@ -17,6 +22,22 @@ export default function AddExpense(){
   const [paymentMethod, setPaymentMethod] = useState("Cash");
   const [receipt, setReceipt] = useState<File | null>(null);
     const [notes, setNotes] = useState("");
+    const { handleCancel, goToAddExpenseSuccess } = useNavigation();
+
+
+    const handleSaveExpense = () => {
+    const expenseData = {
+      amount,
+      title,
+      date,
+      category,
+      paymentMethod,
+      receipt,
+      notes,
+    };
+     console.log("Expense Data:", expenseData);
+     goToAddExpenseSuccess();
+  };
 
   
     return(
@@ -60,11 +81,27 @@ export default function AddExpense(){
               value={notes}
               onChange={setNotes}
             />
+
+           
+          <Button
+            text="Save Expense"
+            type="button"
+            onClick={handleSaveExpense}
+            className="h-9 text-[9px] sm:h-11 sm:text-xs mt-3.5"
+          />
+        
+
+         {/* info */}
+           <ExpenseInfo/>
               </div>
              </div>
+
+              
+       
+          
 
         </div>
       </main>
        
-    )
+    );
 }
